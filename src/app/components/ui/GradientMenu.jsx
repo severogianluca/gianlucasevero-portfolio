@@ -2,27 +2,27 @@
 
 import Link from "next/link";
 import React from "react";
+import { User } from 'lucide-react';
 import {
     IoHomeOutline, IoCameraOutline,
-    IoVideocamOutline,
     IoShareSocialOutline,
     IoHeartOutline
 } from "react-icons/io5";
 
 const GradientMenu = () => {
     const menuItems = [
-        { title: "Home", icon: <IoHomeOutline />, gradientFrom: "#a955ff", gradientTo: "#ea51ff", href: "/homepage" },
-        { title: "Photo", icon: <IoCameraOutline />, gradientFrom: "#FF9966", gradientTo: "#FF5E62", href: "/photo" },
-        { title: 'Video', icon: <IoVideocamOutline />, gradientFrom: '#56CCF2', gradientTo: '#2F80ED', href: "/photo" },
-        { title: 'Share', icon: <IoShareSocialOutline />, gradientFrom: '#80FF72', gradientTo: '#7EE8FA', href: "/photo" },
-        { title: 'Tym', icon: <IoHeartOutline />, gradientFrom: '#ffa9c6', gradientTo: '#f434e2', href: "/photo" }
+        { title: "Home", icon: <IoHomeOutline />, gradientFrom: "#a955ff", gradientTo: "#ea51ff", href: "#homepage" },
+        { title: 'About me', icon: <User />, gradientFrom: '#56CCF2', gradientTo: '#2F80ED', href: "#about-me" },
+        { title: "Photo", icon: <IoCameraOutline />, gradientFrom: "#FF9966", gradientTo: "#FF5E62", href: "#photo" },
+        // { title: 'Share', icon: <IoShareSocialOutline />, gradientFrom: '#80FF72', gradientTo: '#7EE8FA', href: "/photo" },
+        // { title: 'Tym', icon: <IoHeartOutline />, gradientFrom: '#ffa9c6', gradientTo: '#f434e2', href: "/photo" }
     ];
 
     return (
-        <div className="flex justify-center items-center pt-5 pb-5">
+        <div className="fixed top-0 left-0 w-full z-50 flex justify-center items-center pt-5 pb-5 bg-slate-950/60 backdrop-blur-md">
             <ul className="flex gap-6">
                 {menuItems.map(({ title, icon, gradientFrom, gradientTo, href }, idx) => (
-                    <Link key={idx} href={href} className="relative group">
+                    <a key={idx} href={href} className="relative group">
                         <li
                             style={{ "--gradient-from": gradientFrom, "--gradient-to": gradientTo }}
                             className="w-[60px] h-[60px] bg-white shadow-lg rounded-full flex items-center justify-center
@@ -49,7 +49,7 @@ const GradientMenu = () => {
                                 {title}
                             </span>
                         </li>
-                    </Link>
+                    </a>
                 ))}
             </ul>
         </div>
