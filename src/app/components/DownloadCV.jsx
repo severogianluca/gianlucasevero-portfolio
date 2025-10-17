@@ -1,31 +1,27 @@
+
 'use client';
+
 import React from 'react';
 
 function DownloadCV(){
     return (
         <>
             <section id="cv">
-                <div className="cv-split">
-                    <div className="cv-split-left">
-                        <div className="cv-split-left-content">
-                            <div className="document-icon">📄</div>
-                            <h3>Curriculum Vitae</h3>
+                <div className="cv-card-section">
+                    <div className="cv-card">
+                        <div className="cv-icon">📋</div>
+                        <h2>Curriculum Vitae</h2>
+                        <p>Scopri la mia esperienza professionale, competenze e formazione</p>
+                        
+                        <div className="cv-details">
+                            <span>📄 Formato: PDF</span>
+                            <span>📊 Dimensione: 614KB</span>
+                            <span>🔄 Ultimo aggiornamento: Ottobre 2025</span>
                         </div>
-                    </div>
-                    <div className="cv-split-right">
-                        <div className="cv-split-content">
-                            <h2>Scarica il mio CV</h2>
-                            <p>Documento professionale completo con tutta la mia esperienza lavorativa, competenze tecniche e formazione accademica.</p>
-                            <ul className="cv-features">
-                                <li>Esperienza professionale</li>
-                                <li>Competenze tecniche e soft skills</li>
-                                <li>Formazione e certificazioni</li>
-                                <li>Portfolio progetti principali</li>
-                            </ul>
-                            <a href="/Gianluca-Severo-CV.pdf" download="Gianluca_Severo_CV.pdf" className="btn-download-split">
-                                Scarica CV →
-                            </a>
-                        </div>
+                        
+                        <a href="/Gianluca-Severo-CV.pdf" download="Gianluca_Severo_CV.pdf" className="btn-download-card">
+                            ⬇️ Scarica CV
+                        </a>
                     </div>
                 </div>
             </section>
@@ -33,97 +29,72 @@ function DownloadCV(){
             <style jsx>{`
                 #cv {
                     width: 100%;
+                    background: transparent;
                 }
 
-                .cv-split {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    min-height: 500px;
-                }
-
-                .cv-split-left {
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                .cv-card-section {
+                    padding: 80px 40px;
+                    background: transparent;
                     display: flex;
-                    align-items: center;
                     justify-content: center;
-                    padding: 60px;
+                    align-items: center;
                 }
 
-                .cv-split-left-content {
-                    color: white;
+                .cv-card {
+                    background: rgba(30, 27, 75, 0.6);
+                    backdrop-filter: blur(10px);
+                    padding: 50px;
+                    border-radius: 20px;
+                    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+                    max-width: 550px;
                     text-align: center;
+                    border: 1px solid rgba(102, 126, 234, 0.2);
                 }
 
-                .cv-split-left-content .document-icon {
-                    font-size: 120px;
-                    margin-bottom: 20px;
-                    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+                .cv-icon {
+                    font-size: 80px;
+                    margin-bottom: 25px;
                     animation: float 3s ease-in-out infinite;
+                    filter: drop-shadow(0 5px 15px rgba(102, 126, 234, 0.3));
                 }
 
                 @keyframes float {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(-15px); }
+                    0%, 100% { 
+                        transform: translateY(0); 
+                    }
+                    50% { 
+                        transform: translateY(-10px); 
+                    }
                 }
 
-                .cv-split-left-content h3 {
-                    font-size: 1.5rem;
-                    font-weight: 300;
-                    opacity: 0.95;
-                }
-
-                .cv-split-right {
-                    background: white;
-                    display: flex;
-                    align-items: center;
-                    padding: 60px;
-                }
-
-                .cv-split-content {
-                    max-width: 500px;
-                }
-
-                .cv-split-content h2 {
-                    font-size: 2.5rem;
-                    color: #333;
-                    margin-bottom: 20px;
-                    font-weight: 600;
-                }
-
-                .cv-split-content > p {
-                    color: #666;
+                .cv-card h2 {
+                    font-size: 2.2rem;
+                    color: #ededed;
                     margin-bottom: 15px;
-                    line-height: 1.7;
-                    font-size: 1.05rem;
                 }
 
-                .cv-features {
-                    list-style: none;
+                .cv-card > p {
+                    color: #d1d5db;
+                    margin-bottom: 25px;
+                    line-height: 1.6;
+                }
+
+                .cv-details {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
                     margin: 30px 0;
+                    padding: 25px;
+                    background: rgba(102, 126, 234, 0.1);
+                    border-radius: 12px;
+                    font-size: 0.95rem;
+                    color: #e5e7eb;
+                    border: 1px solid rgba(102, 126, 234, 0.2);
                 }
 
-                .cv-features li {
-                    padding: 12px 0;
-                    color: #555;
-                    font-size: 1rem;
-                    transition: transform 0.2s ease;
-                }
-
-                .cv-features li:hover {
-                    transform: translateX(5px);
-                }
-
-                .cv-features li::before {
-                    content: "✓ ";
-                    color: #667eea;
-                    font-weight: bold;
-                    margin-right: 10px;
-                    font-size: 1.2rem;
-                }
-
-                .btn-download-split {
+                .btn-download-card {
                     display: inline-block;
-                    padding: 18px 45px;
+                    padding: 18px 50px;
                     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                     color: white;
                     text-decoration: none;
@@ -131,35 +102,28 @@ function DownloadCV(){
                     font-weight: bold;
                     font-size: 1.1rem;
                     transition: all 0.3s ease;
-                    margin-top: 20px;
                 }
 
-                .btn-download-split:hover {
-                    transform: translateX(8px);
-                    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+                .btn-download-card:hover {
+                    transform: scale(1.08);
+                    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
                 }
 
-                /* Responsive */
                 @media (max-width: 768px) {
-                    .cv-split {
-                        grid-template-columns: 1fr;
+                    .cv-card-section {
+                        padding: 60px 20px;
                     }
 
-                    .cv-split-left {
-                        padding: 40px;
-                        min-height: 300px;
-                    }
-
-                    .cv-split-left-content .document-icon {
-                        font-size: 80px;
-                    }
-
-                    .cv-split-right {
+                    .cv-card {
                         padding: 40px 30px;
                     }
 
-                    .cv-split-content h2 {
-                        font-size: 2rem;
+                    .cv-icon {
+                        font-size: 60px;
+                    }
+
+                    .cv-card h2 {
+                        font-size: 1.8rem;
                     }
                 }
             `}</style>
