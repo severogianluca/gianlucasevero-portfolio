@@ -17,7 +17,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative z-10 w-full backdrop-blur-md bg-slate-950/60 border-t border-white/10">
+    <footer id="contact" className="relative z-10 w-full backdrop-blur-md bg-slate-950/60 border-t border-white/10">
       <div className="max-w-6xl mx-auto px-4 py-12">
         
         {/* Social Links */}

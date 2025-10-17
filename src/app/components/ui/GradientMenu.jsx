@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { User, Layers, FileDown  } from 'lucide-react';
+import { User, Layers, FileDown, Mail } from 'lucide-react';
 import {
     IoHomeOutline, IoCameraOutline,
     IoShareSocialOutline,
@@ -11,11 +11,12 @@ import {
 
 const GradientMenu = () => {
     const menuItems = [
-        { title: "Home", icon: <IoHomeOutline />, gradientFrom: "#a955ff", gradientTo: "#ea51ff", href: "#homepage" },
-        { title: 'About me', icon: <User />, gradientFrom: '#56CCF2', gradientTo: '#2F80ED', href: "#about-me" },
-        { title: "Project", icon: <Layers />, gradientFrom: "#FF9966", gradientTo: "#FF5E62", href: "#photo" },
-        // { title: 'Share', icon: <IoShareSocialOutline />, gradientFrom: '#80FF72', gradientTo: '#7EE8FA', href: "/photo" },
-        { title: 'Download CV', icon: <FileDown />, gradientFrom: '#ffa9c6', gradientTo: '#f434e2', href: "#cv" }
+        { title: "Home", icon: <IoHomeOutline />, gradientFrom: "#a855f7", gradientTo: "#6366f1", href: "#homepage" },
+        { title: 'About me', icon: <User />, gradientFrom: '#0ea5e9', gradientTo: '#2563eb', href: "#about-me" },
+        { title: "Project", icon: <Layers />, gradientFrom: "#ec4899", gradientTo: "#a855f7", href: "#project" },
+        { title: 'Download CV', icon: <FileDown />, gradientFrom: '#14b8a6', gradientTo: '#06b6d4', href: "#cv" },
+        { title: 'Contact', icon: <Mail />, gradientFrom: '#6366f1', gradientTo: '#8b5cf6', href: "#contact" },
+
     ];
 
     return (
