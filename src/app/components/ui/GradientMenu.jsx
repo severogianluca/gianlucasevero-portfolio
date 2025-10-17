@@ -15,7 +15,7 @@ const GradientMenu = () => {
         { title: 'About me', icon: <User />, gradientFrom: '#0ea5e9', gradientTo: '#2563eb', href: "#about-me" },
         { title: "Project", icon: <Layers />, gradientFrom: "#ec4899", gradientTo: "#a855f7", href: "#project" },
         { title: 'Download CV', icon: <FileDown />, gradientFrom: '#14b8a6', gradientTo: '#06b6d4', href: "#cv" },
-        { title: 'Contact', icon: <Mail />, gradientFrom: '#6366f1', gradientTo: '#8b5cf6', href: "#contact" },
+        // { title: 'Contact', icon: <Mail />, gradientFrom: '#6366f1', gradientTo: '#8b5cf6', href: "#contact" },
 
     ];
 

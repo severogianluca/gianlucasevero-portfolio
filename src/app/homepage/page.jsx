@@ -4,6 +4,7 @@ import AboutMe from '../components/AboutMe'
 import GradientMenu from '../components/ui/GradientMenu'
 import { Footer } from '../components/Footer'
 import Project from '../components/Project'
+import DownloadCV from '../components/DownloadCV'
 
 export default function Homepage() {
     return (
@@ -40,6 +41,10 @@ export default function Homepage() {
                 </div>
                 <div id="project" className="container mx-auto px-4 flex justify-center items-center bg-transparent">
                     <Project />
+                </div>
+
+                <div id="cv">
+                    <DownloadCV/>
                 </div>
 
                 <Footer />

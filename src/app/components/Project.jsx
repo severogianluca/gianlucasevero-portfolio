@@ -21,9 +21,9 @@ function Project() {
 
   const projectsDX = [
     {
-      title: "AI Chat Bot",
-      description: "Assistente virtuale con intelligenza artificiale avanzata",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop"
+      title: "Sbeam",
+      description: "Applicazione strutturata secondo architettura MVC con Spring Boot e Thymeleaf per la gestione admin, affiancata da un frontend React per l’utente. Il backend espone API REST per le operazioni CRUD e la gestione dell’archivio.",
+      videoUrl: "/sbeam.mp4"
     },
     {
       title: "E-commerce Manga",
