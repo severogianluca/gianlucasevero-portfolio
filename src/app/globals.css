@@ -23,3 +23,10 @@ html {
   scroll-padding-top: 100px;
 }
 
+.banner-black {
+  width: 220px;
+  height: 110px;
+  background: linear-gradient(to right, #1a204f, #1a2150);
+}
+
+

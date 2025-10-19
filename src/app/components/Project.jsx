@@ -41,6 +41,7 @@ function Project() {
   };
 
   return (
+    <>
     <div className="w-full min-h-screen relative flex justify-center items-center py-20 px-4">
       {/* Titolo */}
       <h1 className="absolute top-10 left-1/2 -translate-x-1/2 text-white text-6xl font-bold z-20">
@@ -127,6 +128,8 @@ function Project() {
             </div>
           </GlowCard>
         ))}
+
+
       </div>
 
       {/* Modal immagine/video */}
@@ -150,8 +153,14 @@ function Project() {
             />
           )}
         </div>
+        
       )}
+
+
+
     </div>
+    
+    </>
   );
 }
 

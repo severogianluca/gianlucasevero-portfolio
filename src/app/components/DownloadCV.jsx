@@ -3,22 +3,28 @@
 
 import React from 'react';
 
-function DownloadCV(){
+function DownloadCV() {
     return (
         <>
-            <section id="cv">
+
+            <section id="cv" className="relative">
+                
+                <div className="banner-black absolute top-[-100px]  right-[140px]  w-full flex justify-center items-center"/>
+
+
+
                 <div className="cv-card-section">
                     <div className="cv-card">
                         <div className="cv-icon">📋</div>
                         <h2>Curriculum Vitae</h2>
                         <p>Scopri la mia esperienza professionale, competenze e formazione</p>
-                        
+
                         <div className="cv-details">
                             <span>📄 Formato: PDF</span>
                             <span>📊 Dimensione: 614KB</span>
                             <span>🔄 Ultimo aggiornamento: Ottobre 2025</span>
                         </div>
-                        
+
                         <a href="/Gianluca-Severo-CV.pdf" download="Gianluca_Severo_CV.pdf" className="btn-download-card">
                             ⬇️ Scarica CV
                         </a>
