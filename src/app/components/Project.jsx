@@ -14,7 +14,7 @@ function Project() {
     },
     {
       title: "Spotify",
-      description: "Questa è una copia statica dell’interfaccia di Spotify, creata con HTML e CSS per fare pratica. Non è interattiva, lo scopo era riprodurre l’aspetto grafico.",
+      description: "Questa è una copia statica dell'interfaccia di Spotify, creata con HTML e CSS per fare pratica. Non è interattiva, lo scopo era riprodurre l'aspetto grafico.",
       image: "/spotify.png"
     },
   ];
@@ -22,7 +22,7 @@ function Project() {
   const projectsDX = [
     {
       title: "Sbeam",
-      description: "Applicazione strutturata secondo architettura MVC con Spring Boot e Thymeleaf per la gestione admin, affiancata da un frontend React per l’utente. Il backend espone API REST per le operazioni CRUD e la gestione dell’archivio.",
+      description: "Applicazione strutturata secondo architettura MVC con Spring Boot e Thymeleaf per la gestione admin, affiancata da un frontend React per l'utente. Il backend espone API REST per le operazioni CRUD e la gestione dell'archivio.",
       videoUrl: "/sbeam.mp4"
     },
     {
@@ -31,6 +31,8 @@ function Project() {
       videoUrl: "/manga-e-commerce.mp4"
     },
   ];
+
+  const allProjects = [...projectsSX, ...projectsDX];
 
   const handleOpenModal = (project) => {
     if (project.videoUrl) {
@@ -42,124 +44,160 @@ function Project() {
 
   return (
     <>
-    <div className="w-full min-h-screen relative flex justify-center items-center py-20 px-4">
-      {/* Titolo */}
-      <h1 className="absolute top-10 left-1/2 -translate-x-1/2 text-white text-6xl font-bold z-20">
-        Progetti personali
-      </h1>
+      <div className="w-full min-h-screen relative flex justify-center items-center py-20 px-4">
+        <h1 className="absolute top-10 left-1/2 -translate-x-1/2 text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold z-20 text-center px-4">
+          Progetti personali
+        </h1>
 
-      {/* Robot centrale full-screen */}
-      <div className="absolute inset-0 flex justify-center items-center pt-28">
-        <iframe
-          src="https://my.spline.design/robotfollowcursorforlandingpage-gcwpnQXFG4kNK7waVtORkpDl/"
-          frameBorder="0"
-          width="100%"
-          height="100%"
-          style={{ border: "none" }}
-        />
-      </div>
+        {/* Robot centrale (solo desktop) */}
+        <div className="absolute inset-0 justify-center items-center pt-28 hidden lg:flex">
+          <iframe
+            src="https://my.spline.design/robotfollowcursorforlandingpage-gcwpnQXFG4kNK7waVtORkpDl/"
+            frameBorder="0"
+            width="100%"
+            height="100%"
+            style={{ border: "none" }}
+          />
+        </div>
 
-      {/* Colonna Sinistra */}
-      <div className="absolute left-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-8 z-10">
-        {projectsSX.map((project, index) => (
-          <GlowCard
-            key={index}
-            width="450px"
-            height="250px"
-          >
-            <div
-              className="relative w-full h-full group cursor-pointer"
-              onClick={() => handleOpenModal(project)}
+        <div className="hidden lg:block w-full">
+          {/* Colonna Sinistra */}
+          <div className="absolute left-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-8 z-10">
+            {projectsSX.map((project, index) => (
+              <GlowCard
+                key={index}
+                width="450px"
+                height="250px"
+              >
+                <div
+                  className="relative w-full h-full group cursor-pointer"
+                  onClick={() => handleOpenModal(project)}
+                >
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                    style={{ backgroundImage: `url(${project.image})` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+                  <div className="relative h-full flex flex-col justify-end p-6">
+                    <h2 className="text-white font-bold text-2xl mb-2 transform group-hover:translate-y-[-4px] transition-transform duration-300">
+                      {project.title}
+                    </h2>
+                    <p className="text-gray-300 text-base opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                      {project.description}
+                    </p>
+                  </div>
+                </div>
+              </GlowCard>
+            ))}
+          </div>
+
+          {/* Colonna Destra */}
+          <div className="absolute right-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-8 z-10">
+            {projectsDX.map((project, index) => (
+              <GlowCard
+                key={index + projectsDX.length}
+                width="450px"
+                height="250px"
+              >
+                <div
+                  className="relative w-full h-full group cursor-pointer"
+                  onClick={() => handleOpenModal(project)}
+                >
+                  {project.videoUrl ? (
+                    <video
+                      src={project.videoUrl}
+                      className="absolute inset-0 w-full h-full object-cover rounded-xl"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    />
+                  ) : (
+                    <div
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                      style={{ backgroundImage: `url(${project.image})` }}
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+                  <div className="relative h-full flex flex-col justify-end p-6">
+                    <h2 className="text-white font-bold text-2xl mb-2 transform group-hover:translate-y-[-4px] transition-transform duration-300">
+                      {project.title}
+                    </h2>
+                    <p className="text-gray-300 text-base opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                      {project.description}
+                    </p>
+                  </div>
+                </div>
+              </GlowCard>
+            ))}
+          </div>
+        </div>
+
+        {/* Layout Tablet/Mobile - Griglia responsive */}
+        <div className="lg:hidden relative z-10 w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 pt-16">
+          {allProjects.map((project, index) => (
+            <GlowCard
+              key={index}
+              width="100%"
+              height="250px"
+              className="w-full max-w-md mx-auto"
             >
               <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                style={{ backgroundImage: `url(${project.image})` }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
-              <div className="relative h-full flex flex-col justify-end p-6">
-                <h2 className="text-white font-bold text-2xl mb-2 transform group-hover:translate-y-[-4px] transition-transform duration-300">
-                  {project.title}
-                </h2>
-                <p className="text-gray-300 text-base opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                  {project.description}
-                </p>
+                className="relative w-full h-full group cursor-pointer"
+                onClick={() => handleOpenModal(project)}
+              >
+                {project.videoUrl ? (
+                  <video
+                    src={project.videoUrl}
+                    className="absolute inset-0 w-full h-full object-cover rounded-xl"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
+                ) : (
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                    style={{ backgroundImage: `url(${project.image})` }}
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+                <div className="relative h-full flex flex-col justify-end p-6">
+                  <h2 className="text-white font-bold text-2xl mb-2 transform group-hover:translate-y-[-4px] transition-transform duration-300">
+                    {project.title}
+                  </h2>
+                  <p className="text-gray-300 text-base opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                    {project.description}
+                  </p>
+                </div>
               </div>
-            </div>
-          </GlowCard>
-        ))}
-      </div>
-
-      {/* Colonna Destra */}
-      <div className="absolute right-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-8 z-10">
-        {projectsDX.map((project, index) => (
-          <GlowCard
-            key={index + projectsDX.length}
-            width="450px"
-            height="250px"
-          >
-            <div
-              className="relative w-full h-full group cursor-pointer"
-              onClick={() => handleOpenModal(project)}
-            >
-              {project.videoUrl ? (
-                <video
-                  src={project.videoUrl}
-                  className="absolute inset-0 w-full h-full object-cover rounded-xl"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                />
-              ) : (
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                  style={{ backgroundImage: `url(${project.image})` }}
-                />
-              )}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
-              <div className="relative h-full flex flex-col justify-end p-6">
-                <h2 className="text-white font-bold text-2xl mb-2 transform group-hover:translate-y-[-4px] transition-transform duration-300">
-                  {project.title}
-                </h2>
-                <p className="text-gray-300 text-base opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                  {project.description}
-                </p>
-              </div>
-            </div>
-          </GlowCard>
-        ))}
-
-
-      </div>
-
-      {/* Modal immagine/video */}
-      {modalContent && (
-        <div
-          className="fixed inset-0 bg-black/80 flex justify-center items-center z-50 cursor-zoom-out"
-          onClick={() => setModalContent(null)}
-        >
-          {modalContent.type === 'image' ? (
-            <img
-              src={modalContent.src}
-              alt="Contenuto ingrandito"
-              className="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl"
-            />
-          ) : (
-            <video
-              src={modalContent.src}
-              controls
-              autoPlay
-              className="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl"
-            />
-          )}
+            </GlowCard>
+          ))}
         </div>
-        
-      )}
 
-
-
-    </div>
-    
+        {/* Modal immagine/video */}
+        {modalContent && (
+          <div
+            className="fixed inset-0 bg-black/80 flex justify-center items-center z-50 cursor-zoom-out"
+            onClick={() => setModalContent(null)}
+          >
+            {modalContent.type === 'image' ? (
+              <img
+                src={modalContent.src}
+                alt="Contenuto ingrandito"
+                className="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl"
+              />
+            ) : (
+              <video
+                src={modalContent.src}
+                controls
+                autoPlay
+                className="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl"
+              />
+            )}
+          </div>
+        )}
+      </div>
     </>
   );
 }

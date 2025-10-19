@@ -32,7 +32,7 @@ export const GlowCard = ({ children, className = '', width, height }) => {
         width,
         height,
         boxShadow: borderShadow,
-        border: '2px solid transparent', // bordo iniziale
+        border: '2px solid transparent',
       }}
     >
       <div className="rounded-2xl w-full h-full overflow-hidden">

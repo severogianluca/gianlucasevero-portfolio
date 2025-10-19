@@ -9,7 +9,7 @@ import Project from '../components/Project';
 import DownloadCV from '../components/DownloadCV';
 import Image from 'next/image';
 
-// --- COMPONENTE AboutMe ---
+// --- COMPONENTE AboutMe
 const defaultContainerVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
@@ -48,7 +48,7 @@ function AboutMe({ children, className, variants, preset = 'fade' }) {
   );
 }
 
-// --- DATI DELLE IMMAGINI ---
+// --- DATI DELLE IMMAGINI
 const aboutMeData = [
   { 
     src: "/gianluca-severo.jpg", 
@@ -73,7 +73,7 @@ const aboutMeData = [
   },
 ];
 
-// --- HOMEPAGE ---
+// ----- HOMEPAGE 
 export default function Homepage() {
   return (
     <>
@@ -83,7 +83,6 @@ export default function Homepage() {
         <Section />
       </div>
 
-      {/* --- SEZIONE ABOUT ME CON CARD PIÙ ALTE --- */}
       <div id="about-me" className="pt-20 pb-20 flex justify-center items-center">
         <AboutMe preset="slide" className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto p-4">
           {aboutMeData.map((item, index) => (
@@ -91,7 +90,7 @@ export default function Homepage() {
               key={index}
               className="relative bg-white shadow-lg rounded-xl overflow-hidden border border-gray-100 group cursor-pointer"
             >
-              {/* Immagine full card più alta con effetto hover */}
+              {/* immagine full card più alta con effetto hover */}
               <div className="relative w-full h-96 md:h-[28rem] lg:h-[32rem]">
                 <Image
                   src={item.src}
@@ -101,11 +100,11 @@ export default function Homepage() {
                   priority={index === 0}
                 />
                 
-                {/* Overlay scuro al hover */}
+                {/* overlay scuro al hover */}
                 <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-75 transition-opacity duration-500" />
               </div>
 
-              {/* Contenuto sotto sempre visibile */}
+              {/* contenuto sotto sempre visibile */}
               <div className="p-6 text-center">
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{item.name}</h3>
                 {item.designation && (
@@ -113,7 +112,7 @@ export default function Homepage() {
                 )}
               </div>
 
-              {/* Quote che appare al hover sopra l'immagine */}
+              {/* testo che appare al hover sopra l'immagine */}
               <div className="absolute inset-0 flex flex-col justify-center items-center p-6 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <p className="text-white text-base leading-relaxed">{item.quote}</p>
               </div>

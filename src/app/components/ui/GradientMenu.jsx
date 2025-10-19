@@ -1,13 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import React from "react";
 import { User, Layers, FileDown, Mail } from 'lucide-react';
-import {
-    IoHomeOutline, IoCameraOutline,
-    IoShareSocialOutline,
-    IoHeartOutline
-} from "react-icons/io5";
+import {IoHomeOutline} from "react-icons/io5";
 
 const GradientMenu = () => {
     const menuItems = [

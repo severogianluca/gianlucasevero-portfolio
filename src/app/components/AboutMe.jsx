@@ -64,7 +64,7 @@ function AboutMe({ children, className, variants, preset = 'fade' }) {
                 <motion.div
                     key={index}
                     variants={itemVariants}
-                    className="w-full" // ogni card prende tutta la colonna della grid
+                    className="w-full" 
                 >
                     {child}
                 </motion.div>

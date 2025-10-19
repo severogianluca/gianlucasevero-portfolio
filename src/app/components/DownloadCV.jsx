@@ -8,9 +8,10 @@ function DownloadCV() {
         <>
 
             <section id="cv" className="relative">
-                
-                <div className="banner-black absolute top-[-100px]  right-[140px]  w-full flex justify-center items-center"/>
 
+                <div
+                    className="banner-black absolute top-[-100px] right-[140px] w-full flex justify-center items-center hidden lg:block"
+                />
 
 
                 <div className="cv-card-section">
