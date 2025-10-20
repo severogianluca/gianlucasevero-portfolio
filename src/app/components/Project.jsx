@@ -45,7 +45,7 @@ function Project() {
   return (
     <>
       <div className="w-full min-h-screen relative flex justify-center items-center py-20 px-4">
-        <h1 className="absolute top-10 left-1/2 -translate-x-1/2 text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold z-20 text-center px-4">
+        <h1 className="absolute top-10 left-1/2 -translate-x-1/2 text-white text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-bold z-20 text-center px-4">
           Progetti personali
         </h1>
 
@@ -66,7 +66,7 @@ function Project() {
             {projectsSX.map((project, index) => (
               <GlowCard
                 key={index}
-                width="450px"
+                width="380px"
                 height="250px"
               >
                 <div
@@ -96,7 +96,7 @@ function Project() {
             {projectsDX.map((project, index) => (
               <GlowCard
                 key={index + projectsDX.length}
-                width="450px"
+                width="380px"
                 height="250px"
               >
                 <div
