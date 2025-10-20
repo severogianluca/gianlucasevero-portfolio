@@ -32,7 +32,9 @@ function Section() {
           title="3D Animation"
         />
 
-        <div className="absolute bottom-0 right-0 w-[320px] h-[145px] bg-black pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[320px] h-[57px] bg-black pointer-events-none" />
+
+
       </div>
     </>
   );
