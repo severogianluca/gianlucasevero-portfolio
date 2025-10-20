@@ -10,7 +10,7 @@ function DownloadCV() {
             <section id="cv" className="relative">
 
                 <div
-                    className="banner-black absolute top-[-100px] right-[140px] w-full flex justify-center items-center hidden lg:block"
+                    className="banner-black absolute top-[-100px] right-[0px] w-full flex justify-center items-center hidden lg:block"
                 />
 
 
