@@ -27,7 +27,7 @@ function Project() {
     },
     {
       title: "E-commerce Manga",
-      description: "Primo progetto di gruppo sviluppato con React (frontend) e Node.js (backend), basato su API REST. Include visualizzazione a griglia dei prodotti, pagina dettaglio e carrello interattivo.",
+      description: "Primo progetto di gruppo sviluppato con React e Node.js, basato su API REST. Include visualizzazione a griglia dei prodotti, pagina dettaglio e carrello interattivo.",
       videoUrl: "/manga-e-commerce.mp4"
     },
   ];
